@@ -1,6 +1,8 @@
-# with open("eits.csv",'r') as f:
-#   for line in f.readlines():
-#     print (line)
+import time
+
+with open("eits.csv",'r') as f:
+  for line in f.readlines():
+    print (line)
 
 class School():
   def __init__(self, eits=[],fellows=[]):
@@ -56,14 +58,19 @@ class Fellow(Person):
 
   def eat(self):
     self.happiness_level += 10
-    print("Yummy, I love banku. happiness level now {}".format(self.happiness_level))
+    print("preparing to eat")
+    time.sleep(3)
+    print("All done. Happiness level now {}".format(self.happiness_level))
 
   def teach(self):
     self.happiness_level -= 7
-    print ("I hate teaching. Happiness level now {}".format(self.happiness_level))
+    print("preparing for class..")
+    time.sleep(3)
+    print ("Teaching sucks, happiness level now {}".format(self.happiness_level))
 
   def fellow_count(self):
     print(len(self.__instances))
+
 
 
 
@@ -77,11 +84,11 @@ francis = Fellow("Francis","ghanaian")
 andrew = Fellow("drew","amurricuh")
 kerry = Fellow("drew","usa")
 pascal = Fellow("drew","Congo")
-simpiwe = Fellow("Sim","south african")
+# simpiwe = Fellow("Sim","south african")
 # edem = Fellow("Edem","ghanaian")
 
 # print(sadiq.name,sadiq.nationality)
-print ("hi i'm {}, my nationality is {} and my current happiness is {}".format(miishe.name, miishe.nationality, miishe.happiness_level))
+print ("{} is {} & current happiness is {}".format(miishe.name, miishe.nationality, miishe.happiness_level))
 
 miishe.eat()
 miishe.teach()
