@@ -53,7 +53,7 @@ class FactManager():
       if choice == 'add':
         new_fact = input("What's your new fact?  ")
         new_factbook.add_fact(new_fact)
-        print (len(self.facts))
+        print ("there are {} fact(s)".format(len(self.facts)))
       elif choice == "hear":
         fact_quantity = len(self.facts)
         fact_index = random.randint(1,fact_quantity)
@@ -78,7 +78,7 @@ class Fellow(Person):
 
     if len(self.__instances) > 5:
       self.__instances.pop(0)
-      raise "Andrew's weave drained MEST's account"
+      raise ValueError ("Andrew's weave drained MEST's account")
     
 
   def eat(self):
@@ -134,7 +134,7 @@ francis = Fellow("Francis","ghanaian")
 andrew = Fellow("drew","amurricuh")
 kerry = Fellow("drew","usa")
 pascal = Fellow("drew","Congo")
-# simpiwe = Fellow("Sim","south african")
+simpiwe = Fellow("Sim","south african")
 # edem = Fellow("Edem","ghanaian")
 
 # print(sadiq.name,sadiq.nationality)
