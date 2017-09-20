@@ -58,7 +58,7 @@ class FactManager():
         fact_quantity = len(self.facts)
         fact_index = random.randint(1,fact_quantity)
         print (self.facts[fact_index - 1])
-      elif choice == "quit" or choice == "exit" or choice == "enough":
+      elif choice == "quit" or choice == "exit":
         return
 
 
