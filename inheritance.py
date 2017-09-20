@@ -1,4 +1,5 @@
 import time
+import csv
 
 with open("eits.csv",'r') as f:
   for line in f.readlines():
@@ -58,14 +59,14 @@ class Fellow(Person):
 
   def eat(self):
     self.happiness_level += 10
-    print("preparing to eat")
-    time.sleep(3)
+    print("preparing to eat..")
+    time.sleep(2)
     print("All done. Happiness level now {}".format(self.happiness_level))
 
   def teach(self):
     self.happiness_level -= 7
     print("preparing for class..")
-    time.sleep(3)
+    time.sleep(2)
     print ("Teaching sucks, happiness level now {}".format(self.happiness_level))
 
   def fellow_count(self):
