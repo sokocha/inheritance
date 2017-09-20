@@ -1,5 +1,6 @@
 import time
 import csv
+import random
 
 
 
@@ -32,16 +33,35 @@ class EIT(Person):
   def __init__(self, name, nationality):
     super().__init__(name,nationality)
 
+  def drop_knowledge(self, facts=[]):
+    self.facts = facts
 
 
+class FactManager():
+  def __init__(self,facts=[]):
+    self.facts = facts
+
+  def add_fact(self,fact):
+    self.facts.append(fact)
+    print("Fact saved successfully to Fact Manager")
+
+  def loop(self):
+    while True:
+      new_factbook = FactManager()
+      choice = input("Would you like to 'add' a fact or 'hear' a fact?  ").lower()
+
+      if choice == 'add':
+        new_fact = input("What's your new fact?  ")
+        new_factbook.add_fact(new_fact)
+        print (len(self.facts))
+      elif choice == "hear":
+        fact_quantity = len(self.facts)
+        fact_index = random.randint(1,fact_quantity)
+        print (self.facts[fact_index - 1])
+      elif choice == "quit" or choice == "exit" or choice == "enough":
+        return
 
 
-
-
-
-
-  # def drop_knowledge(self, facts=[]):
-  #   self.facts = facts
 
 
 
@@ -93,20 +113,11 @@ def nationality_checker():
 
 
 
-      # if nationality == "Kenyan":
-      #   return print ("{} is a MESTER".format(name)
-      # elif nationality == "Nigerian":
-      #   return print ("{} is a MESTER".format(name)
-      # elif nationality == "Ghanaian":
-      #   return print ("{} is a MESTER".format(name)
-      # elif nationality == "South African":
-      #   return print ("{} is a MESTER".format(name)
-      # else:
-      #   print("{} is NOT a MESTER".format(name))
-
-
 nationality_checker()
 
+
+guiness_book = FactManager()
+guiness_book.loop()
 
 
 
