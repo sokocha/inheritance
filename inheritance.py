@@ -33,10 +33,9 @@ class EIT(Person):
     super().__init__(name,nationality)
 
 
-  def nationality_checker():
-    with open('eits.csv','r') as my_file:
-      for line in my_file.fieldlines():
-        print(line)
+
+
+
 
 
 
@@ -78,12 +77,46 @@ class Fellow(Person):
     print(len(self.__instances))
 
 
+def nationality_checker():
+  with open('eits.csv','r') as my_file:
+    for line in my_file.readlines():
+      # print(line)
+ 
+      name = line.split(',')[0].strip()
+      nationality = line.split(',')[1].strip()
+      
+
+      if nationality == "Nigerian" or nationality == "Kenyan" or nationality == "Ivorian" or nationality == "Ghanaian" or nationality == "South African":
+        print ("{} is a MESTER".format(name))
+      else:
+        print("Sorry {}, {} is NOT a MEST nationality".format(name,nationality))
+
+
+
+      # if nationality == "Kenyan":
+      #   return print ("{} is a MESTER".format(name)
+      # elif nationality == "Nigerian":
+      #   return print ("{} is a MESTER".format(name)
+      # elif nationality == "Ghanaian":
+      #   return print ("{} is a MESTER".format(name)
+      # elif nationality == "South African":
+      #   return print ("{} is a MESTER".format(name)
+      # else:
+      #   print("{} is NOT a MESTER".format(name))
+
+
+nationality_checker()
+
+
 
 
 
 
 mest = School()
-# sadiq = EIT("sadiq")
+sadiq = EIT("Sadiq","nigerian")
+
+
+
 
 miishe = Fellow("Miishe","ghanarican")
 francis = Fellow("Francis","ghanaian")
@@ -94,10 +127,11 @@ pascal = Fellow("drew","Congo")
 # edem = Fellow("Edem","ghanaian")
 
 # print(sadiq.name,sadiq.nationality)
-print ("{} is {} & current happiness is {}".format(miishe.name, miishe.nationality, miishe.happiness_level))
+# print ("{} is {} & current happiness is {}".format(miishe.name, miishe.nationality, miishe.happiness_level))
 
-miishe.eat()
-miishe.teach()
+# miishe.eat()
+# miishe.teach()
+
 # edem.fellow_count()
 # miishe.teach()
 
