@@ -1,9 +1,8 @@
 import time
 import csv
 
-with open("eits.csv",'r') as f:
-  for line in f.readlines():
-    print (line)
+
+
 
 class School():
   def __init__(self, eits=[],fellows=[]):
@@ -32,6 +31,12 @@ class Person():
 class EIT(Person):
   def __init__(self, name, nationality):
     super().__init__(name,nationality)
+
+
+  def nationality_checker():
+    with open('eits.csv','r') as my_file:
+      for line in my_file.fieldlines():
+        print(line)
 
 
 
