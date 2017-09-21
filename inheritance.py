@@ -77,8 +77,8 @@ class Fellow(Person):
     self.__instances.append(self)
 
     if len(self.__instances) > 5:
-      self.__instances.pop(-1)
-      raise ValueError ("Andrew's weave drained MEST's account")
+      removed_instance = self.__instances.pop(-1)
+      raise ValueError ("{} could not be hired. blame Andrew's weave".format(removed_instance.name))
     
 
   def eat(self):
@@ -140,8 +140,8 @@ simpiwe = Fellow("Sim","south african")
 # print(sadiq.name,sadiq.nationality)
 # print ("{} is {} & current happiness is {}".format(miishe.name, miishe.nationality, miishe.happiness_level))
 
-# miishe.eat()
-# miishe.teach()
+miishe.eat()
+miishe.teach()
 
 # edem.fellow_count()
 # miishe.teach()
