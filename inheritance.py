@@ -77,7 +77,7 @@ class Fellow(Person):
     self.__instances.append(self)
 
     if len(self.__instances) > 5:
-      self.__instances.pop(0)
+      self.__instances.pop(-1)
       raise ValueError ("Andrew's weave drained MEST's account")
     
 
@@ -116,8 +116,8 @@ def nationality_checker():
 nationality_checker()
 
 
-guiness_book = FactManager()
-guiness_book.loop()
+# guiness_book = FactManager()
+# guiness_book.loop()
 
 
 
