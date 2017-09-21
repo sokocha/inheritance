@@ -78,7 +78,7 @@ class Fellow(Person):
 
     if len(self.__instances) > 5:
       removed_instance = self.__instances.pop(-1)
-      raise ValueError ("{} could not be hired. blame Andrew's weave".format(removed_instance.name))
+      raise ValueError ("{} could not be hired. blame Andrew's weave".format(self.name))
     
 
   def eat(self):
